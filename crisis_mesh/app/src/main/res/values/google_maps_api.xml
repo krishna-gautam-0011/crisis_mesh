@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ============================================================================
+  EDIT THIS FILE ONLY to wire up the satellite map.
+  ============================================================================
+  1. Go to https://console.cloud.google.com/google/maps-apis/credentials
+  2. Create (or pick) a project, enable "Maps SDK for Android", create an API
+     key, and (recommended) restrict it to your app's package name
+     (com.example.p2pchat) + SHA-1 signing fingerprint.
+  3. Paste the key below, replacing YOUR_GOOGLE_MAPS_API_KEY_HERE.
+
+  Without a valid key, MapsActivity still opens and pin-drop / distance-and-
+  bearing / "hand off to Google Maps for turn-by-turn" all still work — you'll
+  just see a blank grey tile area with a Google watermark instead of imagery.
+-->
+<resources>
+    <string name="google_maps_key" translatable="false">YOUR_GOOGLE_MAPS_API_KEY_HERE</string>
+</resources>

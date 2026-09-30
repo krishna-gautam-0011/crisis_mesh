@@ -1,0 +1,39 @@
+<resources>
+    <!-- Brand gradient -->
+    <color name="brand_start">#4F46E5</color>
+    <color name="brand_end">#7C3AED</color>
+    <color name="brand_solid">#4F46E5</color>
+
+    <!-- Scaffold -->
+    <color name="bg_light">#F3F4F8</color>
+    <color name="surface_white">#FFFFFF</color>
+    <color name="divider">#E7E8F0</color>
+
+    <!-- Text -->
+    <color name="text_primary">#1F2430</color>
+    <color name="text_secondary">#8A8FA3</color>
+    <color name="text_on_brand">#FFFFFF</color>
+
+    <!-- Accents -->
+    <color name="public_accent">#2F80ED</color>
+    <color name="public_accent_bg">#EAF2FE</color>
+    <color name="private_accent">#E0459B</color>
+    <color name="private_accent_bg">#FDEAF4</color>
+    <color name="online_dot">#22C55E</color>
+    <color name="online_bg">#E9FBF0</color>
+
+    <!-- Maps / location -->
+    <color name="location_accent">#EA580C</color>
+    <color name="location_accent_bg">#FFF1E6</color>
+    <color name="map_outline">#4F46E5</color>
+    <color name="map_fill">#EEF0FF</color>
+    <color name="map_grid">#D8DCEE</color>
+    <color name="map_city_dot">#7C3AED</color>
+    <color name="map_user_dot">#2F80ED</color>
+    <color name="map_pin">#E0459B</color>
+    <color name="map_route">#EA580C</color>
+
+    <!-- Misc -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#1F2430</color>
+</resources>

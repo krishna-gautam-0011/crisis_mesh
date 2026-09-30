@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_light">
+
+    <!-- Gradient header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/gradient_header_bg"
+        android:paddingStart="8dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/backButton"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:gravity="center"
+            android:text="←"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/circle_white_translucent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/mapTitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Offline Map • India"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/mapSubtitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tap anywhere to drop a pin"
+                android:textColor="#DCD6FF"
+                android:textSize="12sp"
+                android:layout_marginTop="1dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/muteButton"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginEnd="6dp"
+            android:gravity="center"
+            android:text="🔈"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/circle_white_translucent" />
+
+        <TextView
+            android:id="@+id/loadRoadsButton"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:gravity="center"
+            android:text="🛣"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/circle_white_translucent" />
+    </LinearLayout>
+
+    <!-- Map + floating controls -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.example.p2pchat.maps.IndiaMapView
+            android:id="@+id/indiaMapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_light" />
+
+        <TextView
+            android:id="@+id/disclaimerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|start"
+            android:layout_margin="10dp"
+            android:padding="6dp"
+            android:background="#CCFFFFFF"
+            android:text="Fully offline • no internet, no other app needed"
+            android:textSize="10sp"
+            android:textColor="@color/text_secondary" />
+
+        <TextView
+            android:id="@+id/turnByTurnText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="10dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text=""
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@drawable/turn_by_turn_bg"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/roadLoadProgressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|start"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="34dp"
+            android:padding="6dp"
+            android:background="#CCFFFFFF"
+            android:text=""
+            android:textSize="10sp"
+            android:textColor="@color/location_accent"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/myLocationButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="@null"
+                app:srcCompat="@drawable/ic_my_location"
+                app:backgroundTint="@color/surface_white"
+                app:tint="@color/brand_solid"
+                app:fabSize="mini" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/resetViewButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null"
+                app:srcCompat="@drawable/ic_map"
+                app:backgroundTint="@color/surface_white"
+                app:tint="@color/brand_solid"
+                app:fabSize="mini" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- Bottom info / controls card -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="8dp"
+        app:strokeWidth="0dp"
+        app:cardBackgroundColor="@color/surface_white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="14dp">
+
+            <TextView
+                android:id="@+id/pinInfoText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tap the map to drop a pin anywhere in India"
+                android:textSize="13sp"
+                android:textColor="@color/text_primary"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/navInfoText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text=""
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/location_accent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/navigateButton"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:text="Navigate"
+                    android:textAllCaps="false"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:icon="@drawable/ic_navigation"
+                    app:iconTint="@color/white"
+                    app:iconGravity="textStart"
+                    app:iconPadding="4dp"
+                    app:cornerRadius="22dp"
+                    app:backgroundTint="@color/location_accent" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/clearPinButton"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="Clear pin"
+                    android:textAllCaps="false"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    app:cornerRadius="22dp"
+                    app:strokeColor="@color/text_secondary"
+                    android:textColor="@color/text_primary" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>
